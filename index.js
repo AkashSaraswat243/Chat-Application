@@ -23,11 +23,6 @@ async function main() {
     await mongoose.connect('mongodb://127.0.0.1:27017/whatsapp');
 }
 
-// HOME ROUTE
-app.get('/', (req, res) => {
-    res.send("home is working");
-});
-
 // INDEX ROUTE
 app.get('/chats', async (req, res) => {
     let chats = await Chat.find();
