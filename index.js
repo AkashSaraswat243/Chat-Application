@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
@@ -19,8 +21,10 @@ main()
         console.log(err);
     })
 
+const db = process.env.DB_URL;
+
 async function main() {
-    await mongoose.connect('mongodb://127.0.0.1:27017/whatsapp');
+    await mongoose.connect(db);
 }
 
 // HOME ROUTE
